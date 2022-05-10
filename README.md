@@ -25,8 +25,16 @@ flutter create flutter_kitchensink
 
 7. If everything works, you can see the flutter counter demo app running in your simulator.
 
+### Session
+Session store data into local permenant storage (sharedPref or file system thru `getApplicationDocumentsDirectory()`).
+
+Thus created an effect of session or permanent stateful stage when switch between screen or even reopen the app.
+
+However, they are to be use together with flutter Stateful Widget or even Riverpod for the missing reactive part.
 
 ### Riverpod
+This is definitely a better replacement to the default flutter `setState()` and stateful widget.
+
 Follows: https://riverpod.dev/docs/getting_started
 
 ```dart
@@ -51,3 +59,12 @@ class MyApp extends HookConsumerWidget {
     }
 }
 ```
+
+## Freezed, Build Runner
+This show how app can call RESTful Api to acquire data and work with riverpod.
+
+Follows: https://medium.com/@surajadkhari/using-riverpod-future-provider-to-fetch-api-7706cad3718e
+
+
+`flutter pub run build_runner build --delete-conflicting-outputs`
+
