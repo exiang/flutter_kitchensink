@@ -29,7 +29,7 @@ flutter create flutter_kitchensink
 ### Riverpod
 Follows: https://riverpod.dev/docs/getting_started
 
-```
+```dart
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 final counterProvider = Provider((_) => 0);
 
