@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_kitchensink/src/model/user_model.dart';
+import 'package:flutter_kitchensink/src/service/user_service.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import 'package:flutter_kitchensink/src/provider/data_provider.dart';
@@ -42,8 +43,8 @@ class RiverpodUserScreenState extends ConsumerState<RiverpodUserScreen> {
                           });
                     },
                     child: ListTile(
-                      title: Text(e.firstname),
-                      subtitle: Text(e.lastname),
+                      title: Text(e.firstname + ' ' + e.lastname),
+                      subtitle: Text(e.email),
                       trailing: CircleAvatar(
                         backgroundImage: NetworkImage(e.avatar),
                       ),

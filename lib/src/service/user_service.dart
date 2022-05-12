@@ -12,6 +12,7 @@ class ApiService {
   static String endpoint = 'https://reqres.in/api/users?page=2';
 
   static Future<List<UserModel>> getUsers() async {
+    print('ApiService.getUsers()');
     final _prefs = await SharedPreferences.getInstance();
 
     try {
