@@ -9,9 +9,9 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:flutter_kitchensink/src/model/user_model.dart';
 
 class ApiService {
-  String endpoint = 'https://reqres.in/api/users?page=2';
+  static String endpoint = 'https://reqres.in/api/users?page=2';
 
-  Future<List<UserModel>> getUsers() async {
+  static Future<List<UserModel>> getUsers() async {
     final _prefs = await SharedPreferences.getInstance();
 
     try {
