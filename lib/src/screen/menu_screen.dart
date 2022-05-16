@@ -8,6 +8,8 @@ import 'package:flutter_kitchensink/src/screen/session2_screen.dart';
 import 'package:flutter_kitchensink/src/screen/riverpod_screen.dart';
 import 'package:flutter_kitchensink/src/screen/riverpod2_screen.dart';
 import 'package:flutter_kitchensink/src/screen/riverpod_user_screen.dart';
+import 'package:flutter_kitchensink/src/screen/riverpod_auth_screen.dart';
+import 'package:flutter_kitchensink/src/screen/riverpod_auth_protected_screen.dart';
 
 class MenuScreen extends StatelessWidget {
   const MenuScreen({Key? key}) : super(key: key);
@@ -88,13 +90,37 @@ class MenuScreen extends StatelessWidget {
               },
             ),
             ListTile(
-              title: Text("Riverpod User"),
+              title: Text("Riverpod Users"),
               subtitle: Text("List + BottomSheet + HTTP GET"),
               onTap: () {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
                     builder: (context) => RiverpodUserScreen(),
+                  ),
+                );
+              },
+            ),
+            ListTile(
+              title: Text("Riverpod Auth"),
+              subtitle: Text("Global editable state"),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => RiverpodAuthScreen(),
+                  ),
+                );
+              },
+            ),
+            ListTile(
+              title: Text("Riverpod Auth - Protected page"),
+              subtitle: Text("Global editable state"),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => RiverpodAuthProtectedScreen(),
                   ),
                 );
               },

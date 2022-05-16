@@ -5,16 +5,16 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_kitchensink/src/model/user_model.dart';
 import 'package:flutter_kitchensink/src/service/user_service.dart';
 
-final userDataProvider = StateNotifierProvider<UserList, ListOfUserModel>(
+final userDataProvider = StateNotifierProvider<UserNotifier, ListOfUserModel>(
   (ref) {
-    return UserList(ListOfUserModel(data: []));
+    return UserNotifier(ListOfUserModel(data: []));
   },
 );
 
-class UserList extends StateNotifier<ListOfUserModel> {
-  UserList(ListOfUserModel initialTodos)
+class UserNotifier extends StateNotifier<ListOfUserModel> {
+  UserNotifier(ListOfUserModel initialUsers)
       : super(
-          initialTodos,
+          initialUsers,
         );
 
   void overrideData(ListOfUserModel listOfUserModel) {

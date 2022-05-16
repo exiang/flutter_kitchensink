@@ -23,6 +23,8 @@ class Session1Screen extends StatefulWidget {
 class _Session1ScreenState extends State<Session1Screen> {
   int counter = 0;
   int sessionCounter = 0;
+  int secureSessionCounter = 0;
+
   bool isLogin = false;
   String loginEmail = '';
 
@@ -39,6 +41,12 @@ class _Session1ScreenState extends State<Session1Screen> {
     global.getSession('counter', 0).then((result) {
       setState(() {
         sessionCounter = result;
+      });
+    });
+
+    global.getSecureSession('counter', 0).then((result) {
+      setState(() {
+        secureSessionCounter = int.parse(result);
       });
     });
   }
@@ -113,6 +121,22 @@ class _Session1ScreenState extends State<Session1Screen> {
                 setState(() {
                   sessionCounter += 1;
                   global.setSession('counter', sessionCounter.toString());
+                });
+              },
+            ),
+            Text("Secure SharedPref session: " +
+                secureSessionCounter.toString()),
+            CupertinoButton(
+              color: Colors.blue,
+              child: Text(
+                "increase",
+                style: const TextStyle(color: Colors.white),
+              ),
+              onPressed: () {
+                setState(() {
+                  secureSessionCounter += 1;
+                  global.setSecureSession(
+                      'counter', secureSessionCounter.toString());
                 });
               },
             ),

@@ -41,6 +41,14 @@ class _Session2ScreenState extends State<Session2Screen> {
                       ? "Shared Pref session: " + snapshot.data.toString()
                       : "loading...");
                 }),
+            FutureBuilder(
+                future: global.getSecureSession('counter', 0),
+                builder: (context, snapshot) {
+                  return Text(snapshot.hasData
+                      ? "Secure Shared Pref session: " +
+                          snapshot.data.toString()
+                      : "loading...");
+                }),
             CupertinoButton(
               color: Colors.blue,
               child: Text(
