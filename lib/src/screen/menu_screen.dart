@@ -103,7 +103,7 @@ class MenuScreen extends StatelessWidget {
             ),
             ListTile(
               title: Text("Riverpod Auth"),
-              subtitle: Text("Global editable state"),
+              subtitle: Text("Global editable state + StateNotifierProvider"),
               onTap: () {
                 Navigator.push(
                   context,
@@ -115,7 +115,7 @@ class MenuScreen extends StatelessWidget {
             ),
             ListTile(
               title: Text("Riverpod Auth - Protected page"),
-              subtitle: Text("Global editable state"),
+              subtitle: Text("Global editable state + StateNotifierProvider"),
               onTap: () {
                 Navigator.push(
                   context,
